@@ -1,0 +1,393 @@
+:root{
+    --color: #5D4033;
+    --header-background-color: #F5C3B4;
+    --main-background-color: #678062;
+    --footer-background-color: #A4B99A;
+    --linkhover-background-color: #B9E5F5;
+    --input-background-color: #FDDCCF;
+    --figcaption-color: #E6DBCF;
+    --nav-background-color: #5B6858;
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --header-background-color: #C93667;
+        --main-background-color: #172808;
+        --footer-background-color: #29381b;
+        --color: #FDDCCF;
+        --linkhover-background-color: green;
+        --input-background-color: #3E3D29;
+        --figcaption-color: #FDDCCF;
+        --nav-background-color: #C93667;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+img{
+    max-width:100%;
+}
+
+body, input, button{
+    color: var(--color);
+    font-family: 'Times New Roman';
+}
+
+header{
+    background-color: var(--header-background-color);
+}
+
+header img{
+    max-height: 5em;
+    display: block;
+    margin: auto;
+}
+
+main{
+    background-color: var(--main-background-color);
+    padding-bottom: 3em;
+}
+
+@font-face { 
+    font-family: 'LuminariRegular';
+    src: url('../font/Luminari-Regular.ttf')
+}
+
+h1{
+    font-family: 'LuminariRegular', 'fantasy';
+    color: var(--header-background-color);
+}
+
+.index img{
+    padding: 1em;
+    animation: rotation 10s linear infinite;
+}
+    
+@keyframes rotation{
+    from{
+      transform: rotate(0deg)
+    }
+    to{
+      transform: rotate(360deg)
+    } 
+} 
+
+.index a{
+    text-decoration: none; 
+    display: flex;
+    color: var(--color);
+    background-color: var(--header-background-color);
+    border-radius: 0.5em;
+    width: 10em;
+    margin: auto;
+    margin-bottom: 1em;
+    transition: all 300ms ease;
+}
+
+.index a:first-of-type{
+    margin-top: 1em;
+    padding: 1em 1em 1em 2.5em;
+}
+
+.index a:nth-of-type(2),
+.index a:nth-of-type(3){
+    padding: 1em 1em 1em 3em;
+}
+
+.index a:hover{
+    background-color: var(--linkhover-background-color);
+}
+
+footer{
+    background-color: var(--footer-background-color);
+    padding-bottom: 5em;
+}
+
+footer h2{
+    padding: 1em 0 0.5em 4.5em;
+    font-size: large;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1em;
+}
+
+
+form img{
+    width: 4em;
+    position: absolute;
+    margin: 0.2em 0 0 15em;
+}
+
+input{
+    margin-bottom: 7px;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    width: 12em;
+    background-color: var(--input-background-color);
+    color: grey;
+}
+
+button{
+    background-color: var(--linkhover-background-color);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    transition: all 300ms ease;
+    
+}
+
+button:hover{
+    background: var(--main-background-color);
+    color: white;
+}
+
+.activepage{
+    background-color: #29381B;
+    border-radius: 10px;
+    padding-bottom: 0.3em;
+    padding-top: 0.1em;
+}
+
+nav{
+    position: fixed;
+    margin-top: 32.5em;
+    background-color: var(--nav-background-color);
+    border-radius: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    z-index: 1;
+    /* the element with a z-index of 1 will be in 
+    front of the element with a z-index of 0 */
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none; 
+    padding: 0.5em 1em 0.5em 1.5em;
+}
+  
+nav ul li a{
+    text-decoration: none;
+}
+
+nav img{
+    padding: 0 1em;
+}
+
+nav li:first-of-type,
+nav li:nth-of-type(2){
+    padding-top: 0.1em;
+    width: 6em;
+}
+
+/* health html and locations html*/
+
+.healthpage, .restaurant, .restaurant figcaption a{
+    color: var(--figcaption-color);
+}
+
+.healthpage h1{
+    padding: 1em 0 0.3em 2.3em;
+}
+
+.healthpage section:nth-of-type(3) h2, 
+.healthpage section:nth-of-type(4) h2{
+    padding: 1em 0 0 1.2em;
+}
+
+.healthpage section:nth-of-type(2) h2{
+    padding: 1em 0 0.2em 0.6em;
+}
+
+.healthpage section:first-of-type p, 
+.healthpage section:nth-of-type(3) p, 
+.healthpage section:nth-of-type(4) p,
+.locations p, 
+.locations img{
+    padding-left: 2em;
+    padding-right: 1.5em;
+}
+
+.healthpage section:nth-of-type(2) p{
+    padding-left: 1em;
+    padding-right: 0.5em;
+}
+
+.healthpage section:first-of-type p{
+    padding: 1em 7em 1.5em 1.5em;
+    font-size: larger;
+}
+
+@keyframes grow-and-shrink {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+.healthpage img:nth-of-type(2){
+    animation: grow-and-shrink 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    width: 10em;
+    margin: 2em 0 0 7em;
+}
+
+.healthpage img:first-of-type{
+    width: 7em;
+    position: absolute;
+    margin: 3em 0 0 15em
+}
+
+.healthpage section:nth-of-type(2){
+    border-radius: 1em;
+    background-color: var(--header-background-color);
+    color: var(--color);
+    padding-bottom: 1.7em;
+    margin: 0 1.7em;
+}
+
+/* favorites html */
+.restaurant h1{
+    padding: 1em 0 0.7em 1.3em;
+}
+
+.restaurant h2, figcaption, .restaurant p, 
+.locations h1, .locations h2, .locations p{
+    text-align: center;
+}
+
+.restaurant p{
+    margin: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: var(--input-text-color)
+}
+
+.restaurant img{
+    width: 15em;
+    margin: 0.5em 0 0 4em;
+}
+
+figcaption a{
+    font-size: small;
+    text-decoration: none;
+    transition: all 300ms ease;
+}
+
+figcaption a:hover{
+    color: var(--color);
+    background-color: var(--input-background-color);
+    border-radius: 0.3em;
+    padding: 0 0.3em;
+}
+
+figcaption a:visited{
+    color: var(--color);
+}
+
+.restaurant section:last-of-type p:last-of-type a{
+    display: inline-block;
+}
+
+.restaurant section:first-of-type p:last-of-type a{
+    display: inline-block;
+    margin-bottom: 2em;
+}
+
+@keyframes grow-and-shrink {
+    0% {
+      transform: scale(0.9);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+}
+
+.restaurant section:first-of-type p:last-of-type a,
+.restaurant section:last-of-type p:last-of-type a{
+    animation: grow-and-shrink 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.restaurant section:first-of-type p:last-of-type a,
+.restaurant section:last-of-type p:last-of-type a{
+    text-decoration: none;
+    color: var(--color);
+    background-color: var(--header-background-color);
+    border-radius: 0.5em;
+    padding: 0.3em;
+}
+
+.restaurant section:first-of-type p:last-of-type a:hover,
+.restaurant section:last-of-type p:last-of-type a:hover{
+    color:var(--color);
+    background-color: var(--linkhover-background-color);
+}
+
+.utencils{
+    width: 3em;
+}
+
+
+/* locations html */
+.locations h1{
+    padding: 1em 1em 0.5em 1em;
+}
+
+.locations h2{
+    padding-top: 1.5em;
+}
+
+.locations section{
+    border-radius: 1em;
+    background-color: var(--header-background-color);
+    color: var(--color);
+    padding-bottom: 1em;
+    margin: 3em 2em 5em 2em;
+}
+
+.locations section p:last-of-type a{
+    text-decoration: none;
+    color: var(--color);
+    background-color: var(--linkhover-background-color);
+    padding: 0.3em;
+    border-radius: 0.3em;
+    transition: all 200ms ease;
+}
+
+.locations section p:last-of-type a:hover{
+    background: var(--main-background-color);
+    color: white;
+}
+
+.locations figcaption a{
+    color: var(--color)
+}
+
+.locations p{
+    margin: 1em;
+}
+
+.plant{
+    position: absolute;
+    width: 10em;
+    margin-left: 11.5em;
+    margin-top: 14.3em
+}
